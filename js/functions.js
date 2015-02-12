@@ -1,5 +1,6 @@
 
 //content = Messages
+//changed to test git
 
 var Messages = {
 	getAllMessages: function(){
