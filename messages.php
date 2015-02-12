@@ -2,7 +2,7 @@
 
 	require("db.php");
 
-	$result = mysql_query('SELECT * FROM messages ORDER BY ID');
+	$result = mysql_query('SELECT * FROM messages ORDER BY ID DESC');
 
 	if (!$result){
 		die("NOOOO".mysql_error());

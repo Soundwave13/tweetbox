@@ -1,12 +1,12 @@
 
-//content = Messages
+
 //changed to test git
 
 var Messages = {
 	getAllMessages: function(){
 		self.clearMessages();
 		$.ajax({ //connect to server
-			url: "http://localhost:8888/Unit2/messages.php",
+			url: "http://localhost:8888/Unit3/messages.php",
 			dataType:"json"
 		}).done(function(data){
 			for (var m in data){ 
@@ -32,7 +32,7 @@ var Messages = {
 	addMessage: function(messageText){
 
 		$.ajax({ //connect to server
-			url: "http://localhost:8888/Unit2/add.php",
+			url: "http://localhost:8888/Unit3/add.php",
 			type:"POST",
 			data:{
 				Messages:messageText
@@ -45,12 +45,10 @@ var Messages = {
 		});
 
 	},
-
 	clearMessages: function (){
 		$(".message").remove();
-		$(".Messages > .row").html('<div class="twelve columns message"></div>');
+		$(".content > .row").html('<div class="twelve columns message"></div>');
 	}
-
 
 }
 var self = Messages;
@@ -64,7 +62,7 @@ $(document).ready(function() { //pull each message and display in new boxes
 		var messageText = $("#message-text").val();		
 		
 		if (messageText != ""){ //check if input is empty
-			Messages.addMessage(messageText);
+			self.addMessage(messageText);
 		}
 	});
 });
