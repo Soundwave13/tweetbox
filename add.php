@@ -1,6 +1,6 @@
 <?php
 	if ($_SERVER['REQUEST_METHOD'] === 'POST'){
-		$messages = strip_tags($_POST["Messages"]);
+		$messages = mysql_real_escape_string(strip_tags($_POST["Messages"])); //sanitize your inputs
 
 		require("db.php");
 
